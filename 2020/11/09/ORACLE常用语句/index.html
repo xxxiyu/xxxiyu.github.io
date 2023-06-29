@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="zh" data-default-color-scheme=auto>
 
 
 
@@ -16,22 +16,22 @@
   <meta name="author" content="Alan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="doker基本知识">
+    <meta name="description" content="ORACLE常用语句">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker(1)">
-<meta property="og:url" content="http://xxxiyu.github.io/2020/02/16/Docker/index.html">
-<meta property="og:site_name" content="xiyu&#39;s blog">
-<meta property="og:description" content="doker基本知识">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-16T12:36:32.000Z">
-<meta property="article:modified_time" content="2020-04-09T03:19:01.039Z">
-<meta property="article:author" content="xxxiyu">
-<meta property="article:tag" content="Docker">
+<meta property="og:title" content="ORACLE常用语句">
+<meta property="og:url" content="http://xxxiyu.github.io/2020/11/09/ORACLE%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/index.html">
+<meta property="og:site_name" content="Caritun Note">
+<meta property="og:description" content="ORACLE常用语句">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-11-09T13:47:36.000Z">
+<meta property="article:modified_time" content="2023-06-29T01:26:52.672Z">
+<meta property="article:author" content="xyx">
+<meta property="article:tag" content="ORACLE">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Docker(1) - xiyu&#39;s blog</title>
+  <title>ORACLE常用语句 - Caritun Note</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -136,7 +136,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
+                <span>Startseite</span>
               </a>
             </li>
           
@@ -148,7 +148,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
+                <span>Archiv</span>
               </a>
             </li>
           
@@ -160,7 +160,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
+                <span>Kategorien</span>
               </a>
             </li>
           
@@ -172,7 +172,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
+                <span>Schlagwörter</span>
               </a>
             </li>
           
@@ -184,7 +184,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
+                <span>Über</span>
               </a>
             </li>
           
@@ -218,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Docker(1)"></span>
+            <span id="subtitle" data-typed-text="ORACLE常用语句"></span>
           
         </div>
 
@@ -229,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-02-16 20:36" pubdate>
-          February 16, 2020 pm
+        <time datetime="2020-11-09 21:47" pubdate>
+          November 9, 2020 pm
         </time>
       </span>
     
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          538 words
+          415 wörter
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          5 mins
+          4 minuten
         
       </span>
     
@@ -262,7 +262,7 @@
       
         <span id="leancloud-page-views-container" class="post-meta" style="display: none">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="leancloud-page-views"></span> views
+          <span id="leancloud-page-views"></span> ansichten
         </span>
         
       
@@ -298,34 +298,16 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Docker(1)</h1>
+            <h1 style="display: none">ORACLE常用语句</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><h4 id="Docker是什么"><a href="#Docker是什么" class="headerlink" title="Docker是什么"></a>Docker是什么</h4><p>Docker最初是dotCloud公司创始人Solomon Hykes在法国期间发起的一个公司内部项目，在2013年3月以Apache 2.0授权协议开源, 主要项目代码在GitHub上进行维护.</p>
-<p>Docker使用Google公司推出的Go语言进行开发实现.</p>
-<p>Docker是Linux容器的一种封装,提供简单易用的容器使用接口.它是最流行的linux容器解决方案.</p>
-<p>Docker的接口相当简单,用户可以方便的创建和销毁容器.</p>
-<p>Docker将应用程序与程序的依赖,打包在一个文件里面.运行这个文件就会生成一个虚拟容器.</p>
-<p>程序运行在虚拟容器里,如同在真实物理机上运行一样.不需要在担心开发环境和测试环境不一致的问题.</p>
-<h4 id="应用环境"><a href="#应用环境" class="headerlink" title="应用环境"></a>应用环境</h4><ul>
-<li>web应用的自动化打包和发布</li>
-<li>自动化测试和持续集成、发布</li>
-<li>在服务型环境中部署和调整数据库或其他应用</li>
-</ul>
-<h4 id="Docker的三大概念及优势"><a href="#Docker的三大概念及优势" class="headerlink" title="Docker的三大概念及优势"></a>Docker的三大概念及优势</h4><ul>
-<li><strong>镜像</strong> image</li>
-<li><strong>容器</strong> container</li>
-<li><strong>仓库</strong> repository</li>
-</ul>
-<blockquote>
-<p>Docker容纳容器的优势</p>
-<blockquote>
-<p>1 更为高效的利用系统资源<br>2 更快速的启动时间<br>3 一致的运行环境<br>4 持续交付和部署<br>5 更轻松的迁移 </p>
-</blockquote>
-</blockquote>
-<h3 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h3><p>系统环境:docker最低支持centos7且在64位平台上,内核版本在3.10以上<br>版本: 社区版, 企业版(包含了一些收费服务)<br><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">官方安装教程</a></p>
+                <h4 id="查询数据库操作记录"><a href="#查询数据库操作记录" class="headerlink" title="查询数据库操作记录"></a>查询数据库操作记录</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- ORACLE 查询数据库操作记录</span><br><span class="hljs-keyword">SELECT</span> T.SQL_TEXT, T.FIRST_LOAD_TIME <span class="hljs-keyword">FROM</span> V$SQLAREA T<br><span class="hljs-keyword">WHERE</span> T.FIRST_LOAD_TIME <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;2077-12-23%&#x27;</span> <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> T.FIRST_LOAD_TIME <span class="hljs-keyword">DESC</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="查询某个时间下的数据"><a href="#查询某个时间下的数据" class="headerlink" title="查询某个时间下的数据"></a>查询某个时间下的数据</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-comment">-- ORACLE 查询某一时间时数据库的值</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> TABLE_NAME <span class="hljs-keyword">AS</span> <span class="hljs-keyword">OF</span> <span class="hljs-type">TIMESTAMP</span> TO_TIMESTAMP(<span class="hljs-string">&#x27;2077-1-7 13:27:17&#x27;</span>, <span class="hljs-string">&#x27;YYYY-MM-DD HH24:MI:SS&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h4 id="修改序列起始值"><a href="#修改序列起始值" class="headerlink" title="修改序列起始值"></a>修改<font color="deeppink">序列</font>起始值</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">ALTER</span> SEQUENCE TARGET_SEQ INCREMENT <span class="hljs-keyword">BY</span> <span class="hljs-number">100000</span>;<br><span class="hljs-keyword">SELECT</span> TARGET_SEQ.NEXTVAL <span class="hljs-keyword">FROM</span> DUAL;<br><span class="hljs-keyword">ALTER</span> SEQUENCE TARGET_SEQ INCREMENT <span class="hljs-keyword">BY</span> <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -344,7 +326,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Docker/" class="category-chain-item">Docker</a>
+  <a href="/categories/ORACLE/" class="category-chain-item">ORACLE</a>
   
   
 
@@ -359,7 +341,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Docker/">#Docker</a>
+        <a href="/tags/ORACLE/">#ORACLE</a>
       
     </div>
   
@@ -371,26 +353,26 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Docker(1)</div>
-      <div>http://xxxiyu.github.io/2020/02/16/Docker/</div>
+      <div>ORACLE常用语句</div>
+      <div>http://xxxiyu.github.io/2020/11/09/ORACLE常用语句/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>Beitragsautor</div>
           <div>Alan</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>February 16, 2020</div>
+          <div>Veröffentlicht am</div>
+          <div>November 9, 2020</div>
         </div>
       
       
       
         <div class="license-meta-item">
-          <div>Licensed under</div>
+          <div>Urheberrechtshinweis</div>
           <div>
             
               
@@ -416,19 +398,19 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/04/09/Spring%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/" title="Spring常用注解">
+                      <a href="/2021/01/16/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/" title="java处理日期总结">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Spring常用注解</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="hidden-mobile">java处理日期总结</span>
+                        <span class="visible-mobile">Vorheriger</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/01/15/deployProject/" title="git项目部署">
-                        <span class="hidden-mobile">git项目部署</span>
-                        <span class="visible-mobile">Next</span>
+                      <a href="/2020/05/29/sqloptimize/" title="常用MySQL优化">
+                        <span class="hidden-mobile">常用MySQL优化</span>
+                        <span class="visible-mobile">Nächster</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -449,7 +431,7 @@
     <div id="toc">
   <p class="toc-header">
     <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
+    <span>Inhaltsverzeichnis</span>
   </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
@@ -505,7 +487,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -513,7 +495,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -694,7 +676,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
   </noscript>
 </body>
 </html>

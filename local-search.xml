@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Java基础</title>
+    <link href="/2023/05/10/Java%E5%9F%BA%E7%A1%80/"/>
+    <url>/2023/05/10/Java%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ORACLE MERGE INTO</title>
     <link href="/2021/08/08/oracle-merge-into/"/>
     <url>/2021/08/08/oracle-merge-into/</url>
@@ -79,11 +92,11 @@
   
   
   <entry>
-    <title>ORACLE查询操作记录和历史数据</title>
-    <link href="/2020/11/09/ORACLE%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95%E5%8F%8A%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AE/"/>
-    <url>/2020/11/09/ORACLE%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95%E5%8F%8A%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AE/</url>
+    <title>ORACLE常用语句</title>
+    <link href="/2020/11/09/ORACLE%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/"/>
+    <url>/2020/11/09/ORACLE%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/</url>
     
-    <content type="html"><![CDATA[<h4 id="oracle查询数据库操作记录"><a href="#oracle查询数据库操作记录" class="headerlink" title="oracle查询数据库操作记录"></a>oracle查询数据库操作记录</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- ORACLE 查询数据库操作记录</span><br><span class="hljs-keyword">SELECT</span> T.SQL_TEXT, T.FIRST_LOAD_TIME <span class="hljs-keyword">FROM</span> V$SQLAREA T<br><span class="hljs-keyword">WHERE</span> T.FIRST_LOAD_TIME <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;2077-12-23%&#x27;</span> <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> T.FIRST_LOAD_TIME <span class="hljs-keyword">DESC</span><br></code></pre></td></tr></table></figure><h4 id="查询某个时间下的数据"><a href="#查询某个时间下的数据" class="headerlink" title="查询某个时间下的数据"></a>查询某个时间下的数据</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-comment">-- ORACLE 查询某一时间时数据库的值</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> TABLE_NAME <span class="hljs-keyword">AS</span> <span class="hljs-keyword">OF</span> <span class="hljs-type">TIMESTAMP</span> TO_TIMESTAMP(<span class="hljs-string">&#x27;2077-1-7 13:27:17&#x27;</span>, <span class="hljs-string">&#x27;YYYY-MM-DD HH24:MI:SS&#x27;</span>)<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h4 id="查询数据库操作记录"><a href="#查询数据库操作记录" class="headerlink" title="查询数据库操作记录"></a>查询数据库操作记录</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- ORACLE 查询数据库操作记录</span><br><span class="hljs-keyword">SELECT</span> T.SQL_TEXT, T.FIRST_LOAD_TIME <span class="hljs-keyword">FROM</span> V$SQLAREA T<br><span class="hljs-keyword">WHERE</span> T.FIRST_LOAD_TIME <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;2077-12-23%&#x27;</span> <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> T.FIRST_LOAD_TIME <span class="hljs-keyword">DESC</span><br></code></pre></td></tr></table></figure><h4 id="查询某个时间下的数据"><a href="#查询某个时间下的数据" class="headerlink" title="查询某个时间下的数据"></a>查询某个时间下的数据</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-comment">-- ORACLE 查询某一时间时数据库的值</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> TABLE_NAME <span class="hljs-keyword">AS</span> <span class="hljs-keyword">OF</span> <span class="hljs-type">TIMESTAMP</span> TO_TIMESTAMP(<span class="hljs-string">&#x27;2077-1-7 13:27:17&#x27;</span>, <span class="hljs-string">&#x27;YYYY-MM-DD HH24:MI:SS&#x27;</span>)<br></code></pre></td></tr></table></figure><h4 id="修改序列起始值"><a href="#修改序列起始值" class="headerlink" title="修改序列起始值"></a>修改<font color="deeppink">序列</font>起始值</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">ALTER</span> SEQUENCE TARGET_SEQ INCREMENT <span class="hljs-keyword">BY</span> <span class="hljs-number">100000</span>;<br><span class="hljs-keyword">SELECT</span> TARGET_SEQ.NEXTVAL <span class="hljs-keyword">FROM</span> DUAL;<br><span class="hljs-keyword">ALTER</span> SEQUENCE TARGET_SEQ INCREMENT <span class="hljs-keyword">BY</span> <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -171,31 +184,6 @@
     <tags>
       
       <tag>Spring</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Docker(1)</title>
-    <link href="/2020/02/16/Docker/"/>
-    <url>/2020/02/16/Docker/</url>
-    
-    <content type="html"><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><h4 id="Docker是什么"><a href="#Docker是什么" class="headerlink" title="Docker是什么"></a>Docker是什么</h4><p>Docker最初是dotCloud公司创始人Solomon Hykes在法国期间发起的一个公司内部项目，在2013年3月以Apache 2.0授权协议开源, 主要项目代码在GitHub上进行维护.</p><p>Docker使用Google公司推出的Go语言进行开发实现.</p><p>Docker是Linux容器的一种封装,提供简单易用的容器使用接口.它是最流行的linux容器解决方案.</p><p>Docker的接口相当简单,用户可以方便的创建和销毁容器.</p><p>Docker将应用程序与程序的依赖,打包在一个文件里面.运行这个文件就会生成一个虚拟容器.</p><p>程序运行在虚拟容器里,如同在真实物理机上运行一样.不需要在担心开发环境和测试环境不一致的问题.</p><h4 id="应用环境"><a href="#应用环境" class="headerlink" title="应用环境"></a>应用环境</h4><ul><li>web应用的自动化打包和发布</li><li>自动化测试和持续集成、发布</li><li>在服务型环境中部署和调整数据库或其他应用</li></ul><h4 id="Docker的三大概念及优势"><a href="#Docker的三大概念及优势" class="headerlink" title="Docker的三大概念及优势"></a>Docker的三大概念及优势</h4><ul><li><strong>镜像</strong> image</li><li><strong>容器</strong> container</li><li><strong>仓库</strong> repository</li></ul><blockquote><p>Docker容纳容器的优势</p><blockquote><p>1 更为高效的利用系统资源<br>2 更快速的启动时间<br>3 一致的运行环境<br>4 持续交付和部署<br>5 更轻松的迁移 </p></blockquote></blockquote><h3 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h3><p>系统环境:docker最低支持centos7且在64位平台上,内核版本在3.10以上<br>版本: 社区版, 企业版(包含了一些收费服务)<br><a href="https://docs.docker.com/engine/install/centos/">官方安装教程</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Docker</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Docker</tag>
       
     </tags>
     
