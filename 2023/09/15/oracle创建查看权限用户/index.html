@@ -13,25 +13,25 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Alan">
+  <meta name="author" content="xyx">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SQL State [72000]">
+    <meta name="description" content="oracle 创建查看权限账户登录dba用户 1sqlplus &#x2F; as sysdba  创建用户 1create user vatms_view identified by vatms_view default tablespace vatms;  赋予连接权限 1grant connect to vatms_view;  赋予创建同义词权限(可选) 1grant create synonym">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL State [72000]">
-<meta property="og:url" content="http://xxxiyu.github.io/2021/03/09/SQLState72000/index.html">
+<meta property="og:title" content="oracle创建查看权限用户">
+<meta property="og:url" content="http://xxxiyu.github.io/2023/09/15/oracle%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E7%94%A8%E6%88%B7/index.html">
 <meta property="og:site_name" content="Caritun Note">
-<meta property="og:description" content="SQL State [72000]">
+<meta property="og:description" content="oracle 创建查看权限账户登录dba用户 1sqlplus &#x2F; as sysdba  创建用户 1create user vatms_view identified by vatms_view default tablespace vatms;  赋予连接权限 1grant connect to vatms_view;  赋予创建同义词权限(可选) 1grant create synonym">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-03-09T13:47:36.000Z">
-<meta property="article:modified_time" content="2021-03-25T07:01:35.096Z">
+<meta property="article:published_time" content="2023-09-15T05:57:31.000Z">
+<meta property="article:modified_time" content="2023-09-15T06:09:19.468Z">
 <meta property="article:author" content="xyx">
 <meta property="article:tag" content="ORACLE">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>SQL State [72000] - Caritun Note</title>
+  <title>oracle创建查看权限用户 - Caritun Note</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="SQL State [72000]"></span>
+            <span id="subtitle" data-typed-text="oracle创建查看权限用户"></span>
           
         </div>
 
@@ -229,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2021-03-09 21:47" pubdate>
-          March 9, 2021 pm
+        <time datetime="2023-09-15 13:57" pubdate>
+          September 15, 2023 pm
         </time>
       </span>
     
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k vortoj
+          434 vortoj
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          14 minutoj
+          4 minutoj
         
       </span>
     
@@ -298,35 +298,42 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">SQL State [72000]</h1>
+            <h1 style="display: none">oracle创建查看权限用户</h1>
             
             
               <div class="markdown-body">
                 
-                <h4 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h4><p>SQL中某一字段为varchar2类型，但是实际要插入的值超过varchar2允许的最大长度4000时，oracle自动将该字段值转化为Long类型，然后提示插入操作失败。</p>
-<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><ol>
-<li><p>确认是否需要插入超过varchar2最大长度的值.如不需要对插入值做截取操作,使其长度小于4000.</p>
-</li>
-<li><p>将字段类型修改为Clob类型,取用是将Clob类型修改为String类型</p>
-</li>
-</ol>
-<h4 id="CLOB定义"><a href="#CLOB定义" class="headerlink" title="CLOB定义"></a>CLOB定义</h4><p><font color="deeppink">数据库中的一种保存文件所使用的类型。</font>Character Large Object<br>SQL类型CLOB在JavaTM编程语言的映射关系。SQL CLOB是内置类型，它将字符大对象(Character Large Object) 存储为数据库表某一行中的一个列值。默认情况下，驱动程序使用SQL locator(CLOB)实现clob对象,这意味着CLOB对象包含一个指向SQL CLOB数据的逻辑指针而不是数据本身。CLOB对象在它被创建的事务处理期间有效。<br>在SQL Server数据库系统里，使用Text作为CLOB的别名。</p>
-<h4 id="JAVA对CLOB的操作"><a href="#JAVA对CLOB的操作" class="headerlink" title="JAVA对CLOB的操作"></a>JAVA对CLOB的操作</h4><ol>
-<li>相对比较小的，可以用String进行直接操作，把CLOB看成字符串类型即可</li>
-<li>如果比较大，可以用 getAsciiStream 或者 getUnicodeStream 以及对应的 setAsciiStream 和 setUnicodeStream 即可<br>clob怎么和Hibernate一起使用</li>
-</ol>
-<p>Clob类型的属性的赋值方式—— String转Clob  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.从request请求中取值（String类型的）</span><br><span class="hljs-type">String</span> <span class="hljs-variable">content</span> <span class="hljs-operator">=</span> request.getParameter(<span class="hljs-string">&quot;content&quot;</span>);<br><span class="hljs-comment">//2.通过hibernate将string转化为clob</span><br><span class="hljs-type">Clob</span> <span class="hljs-variable">clob</span> <span class="hljs-operator">=</span> Hibernate.createClob(content);<br><span class="hljs-comment">//3.给实体类对应属性赋值</span><br>news.setContent(clob);<br></code></pre></td></tr></table></figure>
+                <h1 id="oracle-创建查看权限账户"><a href="#oracle-创建查看权限账户" class="headerlink" title="oracle 创建查看权限账户"></a>oracle 创建查看权限账户</h1><p>登录dba用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">sqlplus <span class="hljs-operator">/</span> <span class="hljs-keyword">as</span> sysdba<br></code></pre></td></tr></table></figure>
 
-<p>Clob类型的属性的取值方式—— Clob转String</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.从数据库取值</span><br>List&lt;News&gt; list = query.addEntity(News.class).list();<br><span class="hljs-comment">//2.取News对象</span><br><span class="hljs-type">News</span> <span class="hljs-variable">news</span> <span class="hljs-operator">=</span> (News)list.get(<span class="hljs-number">0</span>);<br><span class="hljs-comment">//3.将news对象中的clob类型的content转化为String字符串</span><br><span class="hljs-type">String</span> <span class="hljs-variable">content</span> <span class="hljs-operator">=</span> ClobUtil.ClobToString(news.getContent());<br></code></pre></td></tr></table></figure>
+<p>创建用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">user</span> vatms_view identified <span class="hljs-keyword">by</span> vatms_view <span class="hljs-keyword">default</span> tablespace vatms;<br></code></pre></td></tr></table></figure>
 
-<p>ClobUtil</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ClobUtil</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">ClobToString</span><span class="hljs-params">(Clob clob)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">clobStr</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-type">Reader</span> <span class="hljs-variable">is</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            is = clob.getCharacterStream();<br>            <span class="hljs-comment">// 得到流</span><br>            <span class="hljs-type">BufferedReader</span> <span class="hljs-variable">br</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(is);<br>            <span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>            s = br.readLine();<br>            <span class="hljs-type">StringBuffer</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuffer</span>();<br>            <span class="hljs-comment">//执行循环将字符串全部取出赋值给StringBuffer，由StringBuffer转成String</span><br>            <span class="hljs-keyword">while</span> (s != <span class="hljs-literal">null</span>) &#123;<br>                sb.append(s);<br>                s = br.readLine();<br>            &#125;<br>            clobStr = sb.toString();<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>            e.printStackTrace();<br>        &#125;<br>        <span class="hljs-keyword">return</span> clobStr;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>赋予连接权限</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">connect</span> <span class="hljs-keyword">to</span> vatms_view;<br></code></pre></td></tr></table></figure>
 
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30237281/article/details/98843359">https://blog.csdn.net/weixin_30237281/article/details/98843359</a></li>
-</ul>
+<p>赋予创建同义词权限(可选)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> synonym <span class="hljs-keyword">to</span> vatms_view;<br></code></pre></td></tr></table></figure>
+
+<p>授予查看vatms用户下表的权限</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">on</span> vatms.ts_user <span class="hljs-keyword">to</span> vatms_viwe;<br></code></pre></td></tr></table></figure>
+
+<p>创建同义词</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> synonym vatms_view.ts_user <span class="hljs-keyword">for</span> vatms.ts_user;<br></code></pre></td></tr></table></figure>
+
+
+
+<hr/>
+
+<p>查看用户下同义词</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> DBA_SYNONYMS <span class="hljs-keyword">WHERE</span> OWNER <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;VATMS&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>删除同义词</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> SYNONYM VATMS_VIEW.TS_USER;<br></code></pre></td></tr></table></figure>
+
+<p>删除用户及用户下的所有表和视图</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">user</span> vatms_view cascade;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -334,27 +341,6 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/ORACLE/" class="category-chain-item">ORACLE</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
   
   
     <div class="post-meta">
@@ -372,20 +358,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>SQL State [72000]</div>
-      <div>http://xxxiyu.github.io/2021/03/09/SQLState72000/</div>
+      <div>oracle创建查看权限用户</div>
+      <div>http://xxxiyu.github.io/2023/09/15/oracle创建查看权限用户/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>Aŭtoro</div>
-          <div>Alan</div>
+          <div>xyx</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>Postigita</div>
-          <div>March 9, 2021</div>
+          <div>September 15, 2023</div>
         </div>
       
       
@@ -417,18 +403,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/08/oracle-merge-into/" title="ORACLE MERGE INTO">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ORACLE MERGE INTO</span>
-                        <span class="visible-mobile">Antaŭa afiŝo</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/16/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/" title="java处理日期总结">
-                        <span class="hidden-mobile">java处理日期总结</span>
+                      <a href="/2023/08/01/ORACLE%20%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%88%97%E5%8F%98%E5%A4%9A%E8%A1%8C/" title="ORACLE 逗号分隔列变多行">
+                        <span class="hidden-mobile">ORACLE 逗号分隔列变多行</span>
                         <span class="visible-mobile">Sekva afiŝo</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

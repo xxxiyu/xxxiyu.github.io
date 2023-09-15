@@ -4,13 +4,44 @@
   
   
   <entry>
-    <title>Java基础</title>
-    <link href="/2023/05/10/Java%E5%9F%BA%E7%A1%80/"/>
-    <url>/2023/05/10/Java%E5%9F%BA%E7%A1%80/</url>
+    <title>oracle创建查看权限用户</title>
+    <link href="/2023/09/15/oracle%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E7%94%A8%E6%88%B7/"/>
+    <url>/2023/09/15/oracle%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E7%94%A8%E6%88%B7/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="oracle-创建查看权限账户"><a href="#oracle-创建查看权限账户" class="headerlink" title="oracle 创建查看权限账户"></a>oracle 创建查看权限账户</h1><p>登录dba用户</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">sqlplus <span class="hljs-operator">/</span> <span class="hljs-keyword">as</span> sysdba<br></code></pre></td></tr></table></figure><p>创建用户</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">user</span> vatms_view identified <span class="hljs-keyword">by</span> vatms_view <span class="hljs-keyword">default</span> tablespace vatms;<br></code></pre></td></tr></table></figure><p>赋予连接权限</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">connect</span> <span class="hljs-keyword">to</span> vatms_view;<br></code></pre></td></tr></table></figure><p>赋予创建同义词权限(可选)</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> synonym <span class="hljs-keyword">to</span> vatms_view;<br></code></pre></td></tr></table></figure><p>授予查看vatms用户下表的权限</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">on</span> vatms.ts_user <span class="hljs-keyword">to</span> vatms_viwe;<br></code></pre></td></tr></table></figure><p>创建同义词</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> synonym vatms_view.ts_user <span class="hljs-keyword">for</span> vatms.ts_user;<br></code></pre></td></tr></table></figure><hr/><p>查看用户下同义词</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> DBA_SYNONYMS <span class="hljs-keyword">WHERE</span> OWNER <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;VATMS&#x27;</span>;<br></code></pre></td></tr></table></figure><p>删除同义词</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> SYNONYM VATMS_VIEW.TS_USER;<br></code></pre></td></tr></table></figure><p>删除用户及用户下的所有表和视图</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">user</span> vatms_view cascade;<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>ORACLE</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ORACLE 逗号分隔列变多行</title>
+    <link href="/2023/08/01/ORACLE%20%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%88%97%E5%8F%98%E5%A4%9A%E8%A1%8C/"/>
+    <url>/2023/08/01/ORACLE%20%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%88%97%E5%8F%98%E5%A4%9A%E8%A1%8C/</url>
+    
+    <content type="html"><![CDATA[<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">MERGE</span> <span class="hljs-keyword">INTO</span> schema. <span class="hljs-keyword">table</span> alias<br><span class="hljs-keyword">USING</span> &#123; schema. <span class="hljs-keyword">table</span> <span class="hljs-operator">|</span> views <span class="hljs-operator">|</span> query&#125; alias<br><span class="hljs-keyword">ON</span> &#123;(条件) &#125;<br><span class="hljs-keyword">WHEN</span> MATCHED <span class="hljs-keyword">THEN</span><br>  <span class="hljs-keyword">UPDATE</span> <span class="hljs-keyword">SET</span> &#123;clause&#125;<br><span class="hljs-keyword">WHEN</span> <span class="hljs-keyword">NOT</span> MATCHED <span class="hljs-keyword">THEN</span><br>  <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">VALUES</span> &#123;clause&#125;;<br>————————————————<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>ORACLE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ORACLE</tag>
+      
+    </tags>
     
   </entry>
   
