@@ -13,25 +13,25 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="xiyu">
+  <meta name="author" content="xxxiyu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="ORACLE创建查看权限用户">
+    <meta name="description" content="centos7 安装 Mysql 5.7.28">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ORACLE创建查看权限用户">
-<meta property="og:url" content="http://xxxiyu.github.io/2023/09/15/oracle%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E7%94%A8%E6%88%B7/index.html">
+<meta property="og:title" content="centos7 安装 Mysql 5.7.28">
+<meta property="og:url" content="http://xxxiyu.github.io/2023/11/17/Centos7%E5%AE%89%E8%A3%85Mysql57/index.html">
 <meta property="og:site_name" content="Caritun Note">
-<meta property="og:description" content="ORACLE创建查看权限用户">
+<meta property="og:description" content="centos7 安装 Mysql 5.7.28">
 <meta property="og:locale">
-<meta property="article:published_time" content="2023-09-15T05:57:31.000Z">
-<meta property="article:modified_time" content="2023-09-15T06:17:46.326Z">
+<meta property="article:published_time" content="2023-11-17T12:45:03.000Z">
+<meta property="article:modified_time" content="2023-11-17T02:57:05.963Z">
 <meta property="article:author" content="xyx">
-<meta property="article:tag" content="ORACLE">
+<meta property="article:tag" content="Centos7 Mysql">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>ORACLE创建查看权限用户 - Caritun Note</title>
+  <title>centos7 安装 Mysql 5.7.28 - Caritun Note</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ORACLE创建查看权限用户"></span>
+            <span id="subtitle" data-typed-text="centos7 安装 Mysql 5.7.28"></span>
           
         </div>
 
@@ -229,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-15 13:57" pubdate>
-          September 15, 2023 pm
+        <time datetime="2023-11-17 20:45" pubdate>
+          November 17, 2023 pm
         </time>
       </span>
     
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          434 words
+          1.6k words
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          4 mins
+          14 mins
         
       </span>
     
@@ -298,32 +298,90 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">ORACLE创建查看权限用户</h1>
+            <h1 style="display: none">centos7 安装 Mysql 5.7.28</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="oracle-创建查看权限账户"><a href="#oracle-创建查看权限账户" class="headerlink" title="oracle 创建查看权限账户"></a>oracle 创建查看权限账户</h1><h2 id="登录dba用户"><a href="#登录dba用户" class="headerlink" title="登录dba用户"></a>登录dba用户</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">sqlplus <span class="hljs-operator">/</span> <span class="hljs-keyword">as</span> sysdba<br></code></pre></td></tr></table></figure>
-
-<h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">user</span> vatms_view identified <span class="hljs-keyword">by</span> vatms_view <span class="hljs-keyword">default</span> tablespace vatms;<br></code></pre></td></tr></table></figure>
-
-<h2 id="赋予连接权限"><a href="#赋予连接权限" class="headerlink" title="赋予连接权限"></a>赋予连接权限</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">connect</span> <span class="hljs-keyword">to</span> vatms_view;<br></code></pre></td></tr></table></figure>
-
-<h2 id="赋予创建同义词权限-可选"><a href="#赋予创建同义词权限-可选" class="headerlink" title="赋予创建同义词权限(可选)"></a>赋予创建同义词权限(可选)</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> synonym <span class="hljs-keyword">to</span> vatms_view;<br></code></pre></td></tr></table></figure>
-
-<h2 id="授予查看vatms用户下表的权限"><a href="#授予查看vatms用户下表的权限" class="headerlink" title="授予查看vatms用户下表的权限"></a>授予查看vatms用户下表的权限</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">on</span> vatms.ts_user <span class="hljs-keyword">to</span> vatms_viwe;<br></code></pre></td></tr></table></figure>
-
-<h2 id="创建同义词"><a href="#创建同义词" class="headerlink" title="创建同义词"></a>创建同义词</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> synonym vatms_view.ts_user <span class="hljs-keyword">for</span> vatms.ts_user;<br></code></pre></td></tr></table></figure>
+                <h4 id="1-下载-MySQL-yum包"><a href="#1-下载-MySQL-yum包" class="headerlink" title="1 下载 MySQL yum包"></a>1 下载 MySQL yum包</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget http://repo.mysql.com/mysql57-community-release-el7-10.noarch.rpm<br></code></pre></td></tr></table></figure>
 
 
 
-<hr/>
+<h4 id="2-安装MySQL源"><a href="#2-安装MySQL源" class="headerlink" title="2 安装MySQL源"></a>2 安装MySQL源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">rpm -Uvh mysql57-community-release-el7-10.noarch.rpm<br></code></pre></td></tr></table></figure>
 
-<h2 id="查看用户下同义词"><a href="#查看用户下同义词" class="headerlink" title="查看用户下同义词"></a>查看用户下同义词</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> DBA_SYNONYMS <span class="hljs-keyword">WHERE</span> OWNER <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;VATMS&#x27;</span>;<br></code></pre></td></tr></table></figure>
 
-<h2 id="删除同义词"><a href="#删除同义词" class="headerlink" title="删除同义词"></a>删除同义词</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> SYNONYM VATMS_VIEW.TS_USER;<br></code></pre></td></tr></table></figure>
 
-<h2 id="删除用户及用户下的所有表和视图"><a href="#删除用户及用户下的所有表和视图" class="headerlink" title="删除用户及用户下的所有表和视图"></a>删除用户及用户下的所有表和视图</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">user</span> vatms_view cascade;<br></code></pre></td></tr></table></figure>
+<h4 id="3-安装公钥"><a href="#3-安装公钥" class="headerlink" title="3 安装公钥"></a>3 安装公钥</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="4-安装MySQL服务端"><a href="#4-安装MySQL服务端" class="headerlink" title="4 安装MySQL服务端"></a>4 安装MySQL服务端</h4><p>安装过程需要等待一些时间</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum install -y mysql-community-server<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="5-启动MySQL"><a href="#5-启动MySQL" class="headerlink" title="5 启动MySQL"></a>5 启动MySQL</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl start mysqld.service<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="6-检查是否启动成功"><a href="#6-检查是否启动成功" class="headerlink" title="6 检查是否启动成功"></a>6 检查是否启动成功</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl status mysqld.service<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="7-获取临时密码"><a href="#7-获取临时密码" class="headerlink" title="7 获取临时密码"></a>7 获取临时密码</h4><p>使用MySQL5.7为root用户随机生成一个密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">grep &#x27;temporary password&#x27; /var/log/mysqld.log <br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="8-通过临时密码登录MySQL"><a href="#8-通过临时密码登录MySQL" class="headerlink" title="8 通过临时密码登录MySQL"></a>8 通过临时密码登录MySQL</h4><p>使用临时密码登录MySQL，以进行修改密码操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mysql -uroot -p<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="9-全局修改MySQL密码复杂度"><a href="#9-全局修改MySQL密码复杂度" class="headerlink" title="9 全局修改MySQL密码复杂度"></a>9 全局修改MySQL密码复杂度</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">mysql&gt; set global validate_password_policy=0;<br>mysql&gt; set global validate_password_length=1;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="10-授权其他机器远程登录"><a href="#10-授权其他机器远程登录" class="headerlink" title="10 授权其他机器远程登录"></a>10 授权其他机器远程登录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;yourpassword&#x27; WITH GRANT OPTION;<br># 刷新权限<br>FLUSH PRIVILEGES;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="11-设置开机自启动"><a href="#11-设置开机自启动" class="headerlink" title="11 设置开机自启动"></a>11 设置开机自启动</h4><p>先退出mysql命令行，然后输入以下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl enable mysqld<br>systemctl daemon-reload<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="12-设置MySQL的字符集为UTF-8"><a href="#12-设置MySQL的字符集为UTF-8" class="headerlink" title="12 设置MySQL的字符集为UTF-8"></a>12 设置MySQL的字符集为UTF-8</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim /etc/my.cnf<br></code></pre></td></tr></table></figure>
+
+<p>修改如下</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment"># For advice on how to change settings please see</span><br><span class="hljs-comment"># http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span><br> <br><span class="hljs-section">[mysql]</span><br><span class="hljs-attr">default-character-set</span>=utf8<br> <br><span class="hljs-section">[mysqld]</span><br><span class="hljs-attr">datadir</span>=/var/lib/mysql<br><span class="hljs-attr">socket</span>=/var/lib/mysql/mysql.sock<br><span class="hljs-attr">default-storage-engine</span>=INNODB<br><span class="hljs-attr">character_set_server</span>=utf8<br> <br><span class="hljs-attr">symbolic-links</span>=<span class="hljs-number">0</span><br> <br><span class="hljs-attr">log-error</span>=/var/log/mysqld.log<br><span class="hljs-attr">pid-file</span>=/var/run/mysqld/mysqld.pid<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="13-重启一下MySQL-令配置生效"><a href="#13-重启一下MySQL-令配置生效" class="headerlink" title="13 重启一下MySQL,令配置生效"></a>13 重启一下MySQL,令配置生效</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">service mysqld restart<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="14-防火墙开放3306端口"><a href="#14-防火墙开放3306端口" class="headerlink" title="14 防火墙开放3306端口"></a>14 防火墙开放3306端口</h4><p>注: 如果是腾讯云服务器, 可在控制台中设置开放端口, 不用执行下面的语句.</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> <span class="hljs-literal">--</span><span class="hljs-comment">state</span><br><span class="hljs-comment">firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> <span class="hljs-literal">--</span><span class="hljs-comment">zone=public</span> <span class="hljs-literal">--</span><span class="hljs-comment">add</span><span class="hljs-literal">-</span><span class="hljs-comment">port=3306/tcp</span> <span class="hljs-literal">--</span><span class="hljs-comment">permanent</span><br><span class="hljs-comment">firewall</span><span class="hljs-literal">-</span><span class="hljs-comment">cmd</span> <span class="hljs-literal">--</span><span class="hljs-comment">reload</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="15-卸载MySQL仓库"><a href="#15-卸载MySQL仓库" class="headerlink" title="15 卸载MySQL仓库"></a>15 卸载MySQL仓库</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">rpm -qa | grep mysql<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum -y remove mysql57-community-release-el7-10.noarch<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="16-数据库的操作"><a href="#16-数据库的操作" class="headerlink" title="16 数据库的操作"></a>16 数据库的操作</h4><h5 id="16-1-启停操作"><a href="#16-1-启停操作" class="headerlink" title="16.1 启停操作"></a>16.1 启停操作</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看mysql是否启动</span><br>service mysqld status<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">启动MySQL</span><br>service mysqld start<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">停止MySQL</span><br>service mysqld stop<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">重启mysql</span><br>service mysqld restart<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="16-2-查看临时密码"><a href="#16-2-查看临时密码" class="headerlink" title="16.2 查看临时密码"></a>16.2 查看临时密码</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">grep password /var/log/mysqld.log<br></code></pre></td></tr></table></figure>
+
+
+
+
 
 
                 
@@ -343,7 +401,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/ORACLE/" class="category-chain-item">ORACLE</a>
+  <a href="/categories/Centos7-Mysql/" class="category-chain-item">Centos7 Mysql</a>
   
   
 
@@ -358,7 +416,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/ORACLE/">#ORACLE</a>
+        <a href="/tags/Centos7-Mysql/">#Centos7 Mysql</a>
       
     </div>
   
@@ -370,20 +428,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ORACLE创建查看权限用户</div>
-      <div>http://xxxiyu.github.io/2023/09/15/oracle创建查看权限用户/</div>
+      <div>centos7 安装 Mysql 5.7.28</div>
+      <div>http://xxxiyu.github.io/2023/11/17/Centos7安装Mysql57/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>Author</div>
-          <div>xiyu</div>
+          <div>xxxiyu</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 15, 2023</div>
+          <div>November 17, 2023</div>
         </div>
       
       
@@ -415,18 +473,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/17/Centos7%E5%AE%89%E8%A3%85Mysql57/" title="centos7 安装 Mysql 5.7.28">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">centos7 安装 Mysql 5.7.28</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/01/ORACLE%20%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%88%97%E5%8F%98%E5%A4%9A%E8%A1%8C/" title="ORACLE 逗号分隔列变多行">
-                        <span class="hidden-mobile">ORACLE 逗号分隔列变多行</span>
+                      <a href="/2023/09/15/oracle%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E7%94%A8%E6%88%B7/" title="ORACLE创建查看权限用户">
+                        <span class="hidden-mobile">ORACLE创建查看权限用户</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
