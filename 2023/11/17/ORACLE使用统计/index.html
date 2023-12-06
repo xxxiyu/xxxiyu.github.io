@@ -13,29 +13,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Alan">
+  <meta name="author" content="xyx">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Markdown Basic Usage">
+    <meta name="description" content="oracle查询数据库总占用空间大小1select sum(bytes)&#x2F;1024&#x2F;1024&#x2F;1024 as &quot;size(G)&quot; from dba_data_files    oracle查询数据库表个数12select count(1) from tabs;select count(1) from user_tables;    查询数据库版本信息1select * from">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown Basic Doc">
-<meta property="og:url" content="http://xxxiyu.github.io/2018/10/15/markdownDoc/index.html">
+<meta property="og:title" content="ORACLE使用统计">
+<meta property="og:url" content="http://xxxiyu.github.io/2023/11/17/ORACLE%E4%BD%BF%E7%94%A8%E7%BB%9F%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Caritun Note">
-<meta property="og:description" content="Markdown Basic Usage">
+<meta property="og:description" content="oracle查询数据库总占用空间大小1select sum(bytes)&#x2F;1024&#x2F;1024&#x2F;1024 as &quot;size(G)&quot; from dba_data_files    oracle查询数据库表个数12select count(1) from tabs;select count(1) from user_tables;    查询数据库版本信息1select * from">
 <meta property="og:locale">
-<meta property="og:image" content="http://xxxiyu.github.io/girl.png">
-<meta property="og:image" content="http://xxxiyu.github.io/girl.png">
-<meta property="og:image" content="http://xxxiyu.github.io/table.png">
-<meta property="article:published_time" content="2018-10-15T12:51:28.000Z">
-<meta property="article:modified_time" content="2020-01-17T07:16:21.340Z">
+<meta property="article:published_time" content="2023-11-17T03:08:51.000Z">
+<meta property="article:modified_time" content="2023-11-22T06:08:41.348Z">
 <meta property="article:author" content="xyx">
-<meta property="article:tag" content="Markdown">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://xxxiyu.github.io/girl.png">
   
   
   
-  <title>Markdown Basic Doc - Caritun Note</title>
+  <title>ORACLE使用统计 - Caritun Note</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Markdown Basic Doc"></span>
+            <span id="subtitle" data-typed-text="ORACLE使用统计"></span>
           
         </div>
 
@@ -233,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2018-10-15 20:51" pubdate>
-          October 15, 2018 pm
+        <time datetime="2023-11-17 11:08" pubdate>
+          November 17, 2023 am
         </time>
       </span>
     
@@ -245,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k wörter
+          189 wörter
         
       </span>
     
@@ -256,7 +251,7 @@
         
         
         
-          17 minuten
+          2 minuten
         
       </span>
     
@@ -302,113 +297,21 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Markdown Basic Doc</h1>
+            <h1 style="display: none">ORACLE使用统计</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="Headers"><a href="#Headers" class="headerlink" title="Headers"></a>Headers</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs clean">#      一级标题<br>##     二级标题<br>###    三级标题<br>####   四级标题<br>#####  五级标题<br>###### 六级标题<br></code></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="Paragraph"><a href="#Paragraph" class="headerlink" title="Paragraph"></a>Paragraph</h3><h4 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h4><p>  <code>*斜体文本demo1*</code> <code>**粗体文本demo1**</code>  <code>***斜粗体文本demo1***</code>  </p>
-<p>  <code>_斜体文本demo2_</code>  <code>__粗体文本demo2__</code>  <code>___斜粗体文本demo2___</code>  </p>
-<p>$\Downarrow$$\Downarrow$显示效果$\Downarrow$$\Downarrow$</p>
-<ul>
-<li><em>斜体文字demo1</em>   <strong>粗体文本demo1</strong>   <em><strong>斜粗体文本demo1</strong></em></li>
-<li><em>斜体文本demo2</em>   <strong>粗体文本demo2</strong>   <em><strong>斜粗体文本demo2</strong></em></li>
-</ul>
-<h4 id="Dividing-Line"><a href="#Dividing-Line" class="headerlink" title="Dividing Line"></a>Dividing Line</h4><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ada"><span class="hljs-number">1</span>、 ***<br><span class="hljs-number">2</span>、 * * *<br><span class="hljs-number">3</span>、 *****<br><span class="hljs-number">4</span>、 - - -<br><span class="hljs-number">5</span>、 <span class="hljs-comment">------------</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="Strikethrough"><a href="#Strikethrough" class="headerlink" title="Strikethrough"></a>Strikethrough</h4><p>  在需要添加删除线的文字两端各添加两个波浪线<code>~~</code>  </p>
-<p><code>~~testText~~</code> $\Rightarrow$ <del>testText</del></p>
-<h4 id="Underline"><a href="#Underline" class="headerlink" title="Underline"></a>Underline</h4><p><code>&lt;u&gt;下划线文本&lt;/u&gt;</code> $\Rightarrow$ <u>下划线文本</u></p>
-<hr>
-<h3 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h3><h4 id="Unordered"><a href="#Unordered" class="headerlink" title="Unordered"></a>Unordered</h4><p>无序列表可以使用<code>*</code> <code>+</code> <code>-</code>作为标记 </p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> 第一条语句<br><span class="hljs-bullet">*</span> 第二条语句<br><span class="hljs-bullet">*</span> 第三条语句<br><br><span class="hljs-bullet">+</span> 第一条语句<br><span class="hljs-bullet">+</span> 第二条语句<br><span class="hljs-bullet">+</span> 第三条语句<br><br><span class="hljs-bullet">-</span> 第一条语句<br><span class="hljs-bullet">-</span> 第二条语句<br><span class="hljs-bullet">-</span> 第三条语句<br></code></pre></td></tr></table></figure>
-
-<p>$\Downarrow$$\Downarrow$显示效果$\Downarrow$$\Downarrow$</p>
-<ul>
-<li>第一条语句</li>
-<li>第二条语句</li>
-<li>第三条语句</li>
-</ul>
-<h4 id="Ordered"><a href="#Ordered" class="headerlink" title="Ordered"></a>Ordered</h4><p>有序列表使用数字并加上<code>.</code>来表示，注意点后有空格</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">1.第一项<br>2.第二项<br>3.第三项<br></code></pre></td></tr></table></figure>
+                <h4 id="oracle查询数据库总占用空间大小"><a href="#oracle查询数据库总占用空间大小" class="headerlink" title="oracle查询数据库总占用空间大小"></a>oracle查询数据库总占用空间大小</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-built_in">sum</span>(bytes)<span class="hljs-operator">/</span><span class="hljs-number">1024</span><span class="hljs-operator">/</span><span class="hljs-number">1024</span><span class="hljs-operator">/</span><span class="hljs-number">1024</span> <span class="hljs-keyword">as</span> &quot;size(G)&quot; <span class="hljs-keyword">from</span> dba_data_files<br></code></pre></td></tr></table></figure>
 
 
-<p>$\Downarrow$$\Downarrow$ 显示效果$\Downarrow$ $\Downarrow$   </p>
-<ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ol>
-<hr>
-<h3 id="Blockquotes"><a href="#Blockquotes" class="headerlink" title="Blockquotes"></a>Blockquotes</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">  java</span><br><span class="hljs-meta prompt_">&gt;</span><span class="language-bash">&gt;  java.lang</span><br><span class="hljs-meta prompt_">&gt;</span><span class="language-bash">&gt;&gt; java.lang.Thread</span><br></code></pre></td></tr></table></figure>
-<p>$\Downarrow$$\Downarrow$显示效果$\Downarrow$$\Downarrow$</p>
-<blockquote>
-<p>java</p>
-<blockquote>
-<p>java.lang</p>
-<blockquote>
-<p>java.lang.Thread</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<hr>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><h4 id="Inline-code"><a href="#Inline-code" class="headerlink" title="Inline code"></a>Inline code</h4><p>如果要突出显示段落上的一个函数或者代码片段可以使用反引号（&#96;）把它包起来 </p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">`checkUserName`函数<br></code></pre></td></tr></table></figure>
-<p>$\Downarrow$$\Downarrow$显示效果如下$\Downarrow$$\Downarrow$<br><code>checkUserName()</code>函数</p>
-<h4 id="Syntax-highlighting"><a href="#Syntax-highlighting" class="headerlink" title="Syntax highlighting"></a>Syntax highlighting</h4><p>代码区块使用四个空格或者一个Tab键<br>也可以使用&#96;&#96;&#96;包裹一段代码，并指定一种语言.也可以不指定代码语言</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">```<span class="language-javascript">javascript</span><br><span class="language-javascript">$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;RUNOOB&#x27;</span>);</span><br><span class="language-javascript">&#125;);</span><br><span class="language-javascript"></span>```<br></code></pre></td></tr></table></figure>
-<p>$\Downarrow$$\Downarrow$显示效果$\Downarrow$$\Downarrow$</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br>$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;Welcome!&#x27;</span>);<br>&#125;);<br><br></code></pre></td></tr></table></figure>
 
-<hr>
-<h3 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h3><p>链接使用方法如下：  </p>
-<ul>
-<li><code>[google](http://www.google.com)</code> $\Rightarrow$ <a target="_blank" rel="noopener" href="http://www.google.com/">google</a></li>
-<li><code>www.google.com</code> $\Rightarrow$ <a target="_blank" rel="noopener" href="http://www.google.com/">www.google.com</a></li>
-</ul>
-<p>这个链接使用变量代替<code>[google][1]</code>，并在文末添加此链接的地址<code>[1]:http://www.google.com</code> $\Rightarrow$ <a target="_blank" rel="noopener" href="http://www.google.com/">google</a></p>
-<hr>
-<h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><p>Markdown图片的基本语法格式如下：<br><code>![alt girl]（girl.png）</code> $\Rightarrow$ <img src="/girl.png" srcset="/img/loading.gif" lazyload alt="girl"><br>也可以像使用网址链接那样使用变量赋值<br><code>![alt girl][2]</code> $\Rightarrow$ <img src="/girl.png" srcset="/img/loading.gif" lazyload alt="alt girl"></p>
-<h3 id="Table"><a href="#Table" class="headerlink" title="Table"></a>Table</h3><p>Markdown制作表格使用<code>|</code>来分隔不同的单元格，使用<code>-</code>来分隔表头和其他行。<br>语法格式如下</p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">|<span class="hljs-string"> 表头 </span>|<span class="hljs-string"> 表头 </span>|<span class="hljs-string"> 表头 </span>|<br>|<span class="hljs-string"> --- </span>|<span class="hljs-string"> ---  </span>|<span class="hljs-string"> --- </span>|<br>|<span class="hljs-string">单元格</span>|<span class="hljs-string">单元格</span>|<span class="hljs-string">单元格</span>|<br>|<span class="hljs-string">单元格</span>|<span class="hljs-string">单元格</span>|<span class="hljs-string">单元格</span>|<br><br></code></pre></td></tr></table></figure>
-<p>$\Downarrow$$\Downarrow$显示效果$\Downarrow$$\Downarrow$</p>
-<table>
-<thead>
-<tr>
-<th>表头</th>
-<th>表头</th>
-<th>表头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>单元格</td>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-<tr>
-<td>单元格</td>
-<td>单元格</td>
-<td>单元格</td>
-</tr>
-</tbody></table>
-<p>我们可以设置表格的对齐方式：</p>
-<ul>
-<li><code>-:</code>  设置内容和标题栏居右对齐</li>
-<li><code>:-</code>  设置内容和标题栏居左对齐</li>
-<li><code>:-:</code> 设置内容和标题栏居中对齐</li>
-</ul>
-<center>$\Downarrow$$\Downarrow$显示效果$\Downarrow$$\Downarrow$</center>
+<h4 id="oracle查询数据库表个数"><a href="#oracle查询数据库表个数" class="headerlink" title="oracle查询数据库表个数"></a>oracle查询数据库表个数</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-built_in">count</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">from</span> tabs;<br><span class="hljs-keyword">select</span> <span class="hljs-built_in">count</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">from</span> user_tables;<br></code></pre></td></tr></table></figure>
 
 
-<p><img src="/table.png" srcset="/img/loading.gif" lazyload alt="alt table"></p>
-<hr>
-<h3 id="Reference-Documents"><a href="#Reference-Documents" class="headerlink" title="Reference Documents"></a>Reference Documents</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">https://www.runoob.com/markdown/md-tutorial.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://guides.github.com/features/mastering-markdown/">https://guides.github.com/features/mastering-markdown/</a></li>
-</ul>
+
+<h4 id="查询数据库版本信息"><a href="#查询数据库版本信息" class="headerlink" title="查询数据库版本信息"></a>查询数据库版本信息</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> v$version;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -417,34 +320,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Markdown/" class="category-chain-item">Markdown</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Markdown/">#Markdown</a>
-      
-    </div>
   
 </div>
 
@@ -454,20 +329,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Markdown Basic Doc</div>
-      <div>http://xxxiyu.github.io/2018/10/15/markdownDoc/</div>
+      <div>ORACLE使用统计</div>
+      <div>http://xxxiyu.github.io/2023/11/17/ORACLE使用统计/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>Beitragsautor</div>
-          <div>Alan</div>
+          <div>xyx</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>Veröffentlicht am</div>
-          <div>October 15, 2018</div>
+          <div>November 17, 2023</div>
         </div>
       
       
@@ -499,15 +374,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2018/11/09/MySQL%E7%9F%A5%E8%AF%86/" title="MySQL Knownledge">
+                      <a href="/2023/11/17/Centos7%E5%AE%89%E8%A3%85Mysql57/" title="centos7 安装 Mysql 5.7.28">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MySQL Knownledge</span>
+                        <span class="hidden-mobile">centos7 安装 Mysql 5.7.28</span>
                         <span class="visible-mobile">Vorheriger</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/09/15/oracle%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E7%94%A8%E6%88%B7/" title="ORACLE创建查看权限用户">
+                        <span class="hidden-mobile">ORACLE创建查看权限用户</span>
+                        <span class="visible-mobile">Nächster</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

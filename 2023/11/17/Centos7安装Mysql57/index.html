@@ -24,7 +24,7 @@
 <meta property="og:description" content="centos7 安装 Mysql 5.7.28">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-11-17T12:45:03.000Z">
-<meta property="article:modified_time" content="2023-11-17T02:57:05.963Z">
+<meta property="article:modified_time" content="2023-12-06T01:19:15.630Z">
 <meta property="article:author" content="xyx">
 <meta property="article:tag" content="Centos7 Mysql">
 <meta name="twitter:card" content="summary_large_image">
@@ -136,7 +136,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
+                <span>Startseite</span>
               </a>
             </li>
           
@@ -148,7 +148,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
+                <span>Archiv</span>
               </a>
             </li>
           
@@ -160,7 +160,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
+                <span>Kategorien</span>
               </a>
             </li>
           
@@ -172,7 +172,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
+                <span>Schlagwörter</span>
               </a>
             </li>
           
@@ -184,7 +184,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
+                <span>Über</span>
               </a>
             </li>
           
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k words
+          1.7k wörter
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          14 mins
+          15 minuten
         
       </span>
     
@@ -262,7 +262,7 @@
       
         <span id="leancloud-page-views-container" class="post-meta" style="display: none">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="leancloud-page-views"></span> views
+          <span id="leancloud-page-views"></span> ansichten
         </span>
         
       
@@ -338,7 +338,7 @@
 
 
 
-<h4 id="9-全局修改MySQL密码复杂度"><a href="#9-全局修改MySQL密码复杂度" class="headerlink" title="9 全局修改MySQL密码复杂度"></a>9 全局修改MySQL密码复杂度</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">mysql&gt; set global validate_password_policy=0;<br>mysql&gt; set global validate_password_length=1;<br></code></pre></td></tr></table></figure>
+<h4 id="9-全局修改MySQL密码复杂度并修改密码"><a href="#9-全局修改MySQL密码复杂度并修改密码" class="headerlink" title="9 全局修改MySQL密码复杂度并修改密码"></a>9 全局修改MySQL密码复杂度并修改密码</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mysql">mysql&gt; set global validate_password_policy=0;<br>mysql&gt; set global validate_password_length=1;<br><br>mysql&gt; ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;yourpassword&#x27;;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -434,20 +434,20 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>Beitragsautor</div>
           <div>xxxiyu</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
+          <div>Veröffentlicht am</div>
           <div>November 17, 2023</div>
         </div>
       
       
       
         <div class="license-meta-item">
-          <div>Licensed under</div>
+          <div>Urheberrechtshinweis</div>
           <div>
             
               
@@ -477,9 +477,9 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/15/oracle%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E7%94%A8%E6%88%B7/" title="ORACLE创建查看权限用户">
-                        <span class="hidden-mobile">ORACLE创建查看权限用户</span>
-                        <span class="visible-mobile">Next</span>
+                      <a href="/2023/11/17/ORACLE%E4%BD%BF%E7%94%A8%E7%BB%9F%E8%AE%A1/" title="ORACLE使用统计">
+                        <span class="hidden-mobile">ORACLE使用统计</span>
+                        <span class="visible-mobile">Nächster</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -500,7 +500,7 @@
     <div id="toc">
   <p class="toc-header">
     <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
+    <span>Inhaltsverzeichnis</span>
   </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
@@ -556,7 +556,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -564,7 +564,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -745,7 +745,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
   </noscript>
 </body>
 </html>
