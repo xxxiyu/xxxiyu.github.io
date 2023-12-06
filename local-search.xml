@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>ssh远程连接报错 Algorithm negotiation failed</title>
+    <link href="/2023/12/05/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%8A%A5%E9%94%99-Algorithm-negotiation-failed/"/>
+    <url>/2023/12/05/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%8A%A5%E9%94%99-Algorithm-negotiation-failed/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ssh-远程连接的时候报错-Algorithm-negotiation-failed"><a href="#ssh-远程连接的时候报错-Algorithm-negotiation-failed" class="headerlink" title="ssh 远程连接的时候报错 Algorithm negotiation failed"></a>ssh 远程连接的时候报错 Algorithm negotiation failed</h1><h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><blockquote><p>Algorithm negotiation failed</p></blockquote><h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p>ssh客户端远程连接服务器之间的加密算法不一致</p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-编辑-x2F-etc-x2F-ssh-x2F-sshd-config"><a href="#1-编辑-x2F-etc-x2F-ssh-x2F-sshd-config" class="headerlink" title="1. 编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config"></a>1. 编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">vi <span class="hljs-regexp">/etc/</span>ssh/sshd_config<br></code></pre></td></tr></table></figure><h3 id="2-在末尾添加如下信息"><a href="#2-在末尾添加如下信息" class="headerlink" title="2. 在末尾添加如下信息"></a>2. 在末尾添加如下信息</h3><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs smali">Ciphers aes128-cbc,aes192-cbc,aes256-cbc,aes128-ctr,aes192-ctr,aes256-ctr,3des-cbc,arcfour128,arcfour256,arcfour,blowfish-cbc,cast128-cbc<br> <br>MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160,hmac-sha1-96,hmac-md5-96<br> <br>KexAlgorithms diffie-hellman-group1-sha1,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group-exchange-sha256,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group1-sha1,curve25519-sha256@libssh.org<br></code></pre></td></tr></table></figure><h3 id="3-重启ssh服务"><a href="#3-重启ssh服务" class="headerlink" title="3. 重启ssh服务"></a>3. 重启ssh服务</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs clean">## CentOS <span class="hljs-number">7</span>命令<br>systemctl restart sshd.service<br><br>## CentOS <span class="hljs-number">6</span>命令<br>service sshd restart<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>SSH</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>centos7 安装 Mysql 5.7.28</title>
     <link href="/2023/11/17/Centos7%E5%AE%89%E8%A3%85Mysql57/"/>
     <url>/2023/11/17/Centos7%E5%AE%89%E8%A3%85Mysql57/</url>

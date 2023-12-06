@@ -16,22 +16,22 @@
   <meta name="author" content="xyx">
   <meta name="keywords" content="">
   
-    <meta name="description" content="linux安装redis安装及常见问题">
+    <meta name="description" content="ssh 远程连接的时候报错 Algorithm negotiation failed报错信息 Algorithm negotiation failed  错误原因ssh客户端远程连接服务器之间的加密算法不一致 解决办法1. 编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config1vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config  2. 在末尾添加如下信息12345Ciphers">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis Install">
-<meta property="og:url" content="http://xxxiyu.github.io/2019/01/24/redisinstall/index.html">
+<meta property="og:title" content="ssh远程连接报错 Algorithm negotiation failed">
+<meta property="og:url" content="http://xxxiyu.github.io/2023/12/05/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%8A%A5%E9%94%99-Algorithm-negotiation-failed/index.html">
 <meta property="og:site_name" content="Caritun Note">
-<meta property="og:description" content="linux安装redis安装及常见问题">
+<meta property="og:description" content="ssh 远程连接的时候报错 Algorithm negotiation failed报错信息 Algorithm negotiation failed  错误原因ssh客户端远程连接服务器之间的加密算法不一致 解决办法1. 编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config1vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config  2. 在末尾添加如下信息12345Ciphers">
 <meta property="og:locale">
-<meta property="article:published_time" content="2019-01-24T12:06:34.000Z">
-<meta property="article:modified_time" content="2020-05-26T09:56:15.450Z">
+<meta property="article:published_time" content="2023-12-05T12:02:33.000Z">
+<meta property="article:modified_time" content="2023-12-06T02:08:11.259Z">
 <meta property="article:author" content="xyx">
-<meta property="article:tag" content="Redis">
+<meta property="article:tag" content="SSH">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Redis Install - Caritun Note</title>
+  <title>ssh远程连接报错 Algorithm negotiation failed - Caritun Note</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Redis Install"></span>
+            <span id="subtitle" data-typed-text="ssh远程连接报错 Algorithm negotiation failed"></span>
           
         </div>
 
@@ -229,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2019-01-24 20:06" pubdate>
-          January 24, 2019 pm
+        <time datetime="2023-12-05 20:02" pubdate>
+          December 5, 2023 pm
         </time>
       </span>
     
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k palabras
+          729 palabras
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          17 minutos
+          7 minutos
         
       </span>
     
@@ -298,38 +298,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Redis Install</h1>
+            <h1 style="display: none">ssh远程连接报错 Algorithm negotiation failed</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h3><h4 id="安装gcc"><a href="#安装gcc" class="headerlink" title="安装gcc"></a>安装gcc</h4><p>redis需要使用gcc来编译，如果没有安装gcc当执行make命令时将会报编译错误。</p>
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs dos">yum install cpp<br>yum install binutils<br>yum install glibc<br>yum install glibc-kernheaders<br>yum install glibc-common<br>yum install glibc-devel<br>yum install gcc<br>yum install make<br><br>yum install tcl<br></code></pre></td></tr></table></figure>
+                <h1 id="ssh-远程连接的时候报错-Algorithm-negotiation-failed"><a href="#ssh-远程连接的时候报错-Algorithm-negotiation-failed" class="headerlink" title="ssh 远程连接的时候报错 Algorithm negotiation failed"></a>ssh 远程连接的时候报错 Algorithm negotiation failed</h1><h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><blockquote>
+<p>Algorithm negotiation failed</p>
+</blockquote>
+<h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p>ssh客户端远程连接服务器之间的加密算法不一致</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="1-编辑-x2F-etc-x2F-ssh-x2F-sshd-config"><a href="#1-编辑-x2F-etc-x2F-ssh-x2F-sshd-config" class="headerlink" title="1. 编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config"></a>1. 编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">vi <span class="hljs-regexp">/etc/</span>ssh/sshd_config<br></code></pre></td></tr></table></figure>
 
-<p>gcc需要依赖很多东西，有些系统已经预装了，为了保险还是把以上所有的命令都执行一遍。</p>
-<h4 id="升级gcc"><a href="#升级gcc" class="headerlink" title="升级gcc"></a>升级gcc</h4><p>升级gcc到5.3以上的版本，升级到gcc 9版本</p>
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs dos"># yum -y install centos-release-scl<br># yum -y install devtoolset-<span class="hljs-number">9</span>-gcc devtoolset-<span class="hljs-number">9</span>-gcc-c++ devtoolset-<span class="hljs-number">9</span>-binutils<br># scl enable devtoolset-<span class="hljs-number">9</span> bash<br># gcc -v<br>Using built-<span class="hljs-keyword">in</span> specs.<br>COLLECT_GCC=gcc<br>COLLECT_LTO_WRAPPER=/opt/rh/devtoolset-<span class="hljs-number">9</span>/root/usr/libexec/gcc/x86_64-redhat-linux/<span class="hljs-number">9</span>/lto-wrapper<br><span class="hljs-function">Target: <span class="hljs-title">x86_64</span>-<span class="hljs-title">redhat</span>-<span class="hljs-title">linux</span></span><br><span class="hljs-function"><span class="hljs-title">Configured</span> <span class="hljs-title">with</span>: ../<span class="hljs-title">configure</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">bootstrap</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">languages</span>=<span class="hljs-title">c</span>,<span class="hljs-title">c</span>++,<span class="hljs-title">fortran</span>,<span class="hljs-title">lto</span> --<span class="hljs-title">prefix</span>=/<span class="hljs-title">opt</span>/<span class="hljs-title">rh</span>/<span class="hljs-title">devtoolset</span>-9/<span class="hljs-title">root</span>/<span class="hljs-title">usr</span> --<span class="hljs-title">mandir</span>=/<span class="hljs-title">opt</span>/<span class="hljs-title">rh</span>/<span class="hljs-title">devtoolset</span>-9/<span class="hljs-title">root</span>/<span class="hljs-title">usr</span>/<span class="hljs-title">share</span>/<span class="hljs-title">man</span> --<span class="hljs-title">infodir</span>=/<span class="hljs-title">opt</span>/<span class="hljs-title">rh</span>/<span class="hljs-title">devtoolset</span>-9/<span class="hljs-title">root</span>/<span class="hljs-title">usr</span>/<span class="hljs-title">share</span>/<span class="hljs-title">info</span> --<span class="hljs-title">with</span>-<span class="hljs-title">bugurl</span>=<span class="hljs-title">http</span>://<span class="hljs-title">bugzilla.redhat.com</span>/<span class="hljs-title">bugzilla</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">shared</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">threads</span>=<span class="hljs-title">posix</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">checking</span>=<span class="hljs-title">release</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">multilib</span> --<span class="hljs-title">with</span>-<span class="hljs-title">system</span>-<span class="hljs-title">zlib</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">__cxa_atexit</span> --<span class="hljs-title">disable</span>-<span class="hljs-title">libunwind</span>-<span class="hljs-title">exceptions</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">gnu</span>-<span class="hljs-title">unique</span>-<span class="hljs-title">object</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">linker</span>-<span class="hljs-title">build</span>-<span class="hljs-title">id</span> --<span class="hljs-title">with</span>-<span class="hljs-title">gcc</span>-<span class="hljs-title">major</span>-<span class="hljs-title">version</span>-<span class="hljs-title">only</span> --<span class="hljs-title">with</span>-<span class="hljs-title">linker</span>-<span class="hljs-title">hash</span>-<span class="hljs-title">style</span>=<span class="hljs-title">gnu</span> --<span class="hljs-title">with</span>-<span class="hljs-title">default</span>-<span class="hljs-title">libstdcxx</span>-<span class="hljs-title">abi</span>=<span class="hljs-title">gcc4</span>-<span class="hljs-title">compatible</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">plugin</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">initfini</span>-<span class="hljs-title">array</span> --<span class="hljs-title">with</span>-<span class="hljs-title">isl</span>=/<span class="hljs-title">builddir</span>/<span class="hljs-title">build</span>/<span class="hljs-title">BUILD</span>/<span class="hljs-title">gcc</span>-9.1.1-20190605/<span class="hljs-title">obj</span>-<span class="hljs-title">x86_64</span>-<span class="hljs-title">redhat</span>-<span class="hljs-title">linux</span>/<span class="hljs-title">isl</span>-<span class="hljs-title">install</span> --<span class="hljs-title">disable</span>-<span class="hljs-title">libmpx</span> --<span class="hljs-title">enable</span>-<span class="hljs-title">gnu</span>-<span class="hljs-title">indirect</span>-<span class="hljs-title">function</span> --<span class="hljs-title">with</span>-<span class="hljs-title">tune</span>=<span class="hljs-title">generic</span> --<span class="hljs-title">with</span>-<span class="hljs-title">arch_32</span>=<span class="hljs-title">x86</span>-64 --<span class="hljs-title">build</span>=<span class="hljs-title">x86_64</span>-<span class="hljs-title">redhat</span>-<span class="hljs-title">linux</span></span><br><span class="hljs-function"><span class="hljs-title">Thread</span> <span class="hljs-title">model</span>: <span class="hljs-title">posix</span></span><br><span class="hljs-function"><span class="hljs-title">gcc</span> <span class="hljs-title">version</span> 9.1.1 20190605 (<span class="hljs-title">Red</span> <span class="hljs-title">Hat</span> 9.1.1-2) (<span class="hljs-title">GCC</span>)</span><br></code></pre></td></tr></table></figure>
+<h3 id="2-在末尾添加如下信息"><a href="#2-在末尾添加如下信息" class="headerlink" title="2. 在末尾添加如下信息"></a>2. 在末尾添加如下信息</h3><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs smali">Ciphers aes128-cbc,aes192-cbc,aes256-cbc,aes128-ctr,aes192-ctr,aes256-ctr,3des-cbc,arcfour128,arcfour256,arcfour,blowfish-cbc,cast128-cbc<br> <br>MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160,hmac-sha1-96,hmac-md5-96<br> <br>KexAlgorithms diffie-hellman-group1-sha1,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group-exchange-sha256,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group1-sha1,curve25519-sha256@libssh.org<br></code></pre></td></tr></table></figure>
 
-<p>如上显示结果表示升级成功。</p>
-<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>通过redis官网下载最新稳定版本<br><a target="_blank" rel="noopener" href="https://redis.io/download">https://redis.io/download</a></p>
-<p>也可以直接通过命令进行获取下载redis安装包</p>
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dos"># wget http://download.redis.io/releases/redis-<span class="hljs-number">6</span>.<span class="hljs-number">0</span>.<span class="hljs-number">3</span>.tar.gz<br># tar xzf redis-<span class="hljs-number">6</span>.<span class="hljs-number">0</span>.<span class="hljs-number">3</span>.tar.gz<br># <span class="hljs-built_in">cd</span> redis-<span class="hljs-number">6</span>.<span class="hljs-number">0</span>.<span class="hljs-number">3</span><br># make<br></code></pre></td></tr></table></figure>
+<h3 id="3-重启ssh服务"><a href="#3-重启ssh服务" class="headerlink" title="3. 重启ssh服务"></a>3. 重启ssh服务</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs clean">## CentOS <span class="hljs-number">7</span>命令<br>systemctl restart sshd.service<br><br>## CentOS <span class="hljs-number">6</span>命令<br>service sshd restart<br></code></pre></td></tr></table></figure>
 
-<h3 id="配置redis"><a href="#配置redis" class="headerlink" title="配置redis"></a>配置redis</h3><ol>
-<li><p>下载好redis安装包，解压安装之后，将配置文件redis.conf复制到etc文件夹下<br><code>cd /usr/local/redis-6.0.3</code><br><code>cp redis.conf /etc</code></p>
-</li>
-<li><p>进入etc，找到redis.conf并修改 daemonize no为 daemonize yes,这样就可以后台运行了。再编辑页面使用&#x2F;deamonize可以快速查找到需要配置的位置。</p>
-</li>
-<li><p>开启客户端要确保服务端启动<br><code>redis-server /etc/redis.conf</code></p>
-</li>
-<li><p>在redis的src目录下启动客户端<br><code>./redis-cli</code></p>
-</li>
-</ol>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li><a target="_blank" rel="noopener" href="http://suo.im/6gau48">http://suo.im/6gau48</a>  </li>
-<li><a target="_blank" rel="noopener" href="http://suo.im/5TCh2T">http://suo.im/5TCh2T</a>  </li>
-<li><a target="_blank" rel="noopener" href="http://suo.im/5Evcgu">http://suo.im/5Evcgu</a></li>
-</ul>
+
+
 
                 
               </div>
@@ -338,32 +323,11 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Redis/" class="category-chain-item">Redis</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Redis/">#Redis</a>
+        <a href="/tags/SSH/">#SSH</a>
       
     </div>
   
@@ -375,8 +339,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Redis Install</div>
-      <div>http://xxxiyu.github.io/2019/01/24/redisinstall/</div>
+      <div>ssh远程连接报错 Algorithm negotiation failed</div>
+      <div>http://xxxiyu.github.io/2023/12/05/ssh远程连接报错-Algorithm-negotiation-failed/</div>
     </div>
     <div class="license-meta">
       
@@ -388,7 +352,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Publicado el</div>
-          <div>January 24, 2019</div>
+          <div>December 5, 2023</div>
         </div>
       
       
@@ -420,18 +384,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2019/04/02/closePort/" title="查找关闭指定端口号进程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">查找关闭指定端口号进程</span>
-                        <span class="visible-mobile">Anterior</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2019/01/18/redisDataType/" title="Redis Data Type">
-                        <span class="hidden-mobile">Redis Data Type</span>
+                      <a href="/2023/11/17/Centos7%E5%AE%89%E8%A3%85Mysql57/" title="centos7 安装 Mysql 5.7.28">
+                        <span class="hidden-mobile">centos7 安装 Mysql 5.7.28</span>
                         <span class="visible-mobile">Siguiente</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
