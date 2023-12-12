@@ -26,7 +26,7 @@
 <meta property="og:description" content="tomcat运行bin下的startup.bat后，startup.bat会调用catalina.bat文件，而catalina.bat会调用setclasspath.bat文件来获取JAVA_HOME和JRE_HOME这两个环境变量的值，因此可在setclasspath.bat文件的开头处加上JAVA_HOME和JRE_HOME指定tomcat启动时使用的JDK。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-12-12T02:39:04.000Z">
-<meta property="article:modified_time" content="2023-12-12T03:03:03.392Z">
+<meta property="article:modified_time" content="2023-12-12T03:11:57.008Z">
 <meta property="article:author" content="xiyuxx">
 <meta property="article:tag" content="Tomcat">
 <meta name="twitter:card" content="summary_large_image">
@@ -264,7 +264,7 @@
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">set</span> <span class="hljs-string">JAVA_HOME=D:\Program Files\Java\jdk7\jdk1.7.0_51</span><br><span class="hljs-attr">set</span> <span class="hljs-string">JRE_HOME=D:\Program Files\Java\jdk7\jre7</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="Linux环境"><a href="#Linux环境" class="headerlink" title="Linux环境"></a>Linux环境</h3><p>在bin下找到setclasspath.sh，在文件的最开始加入如下代码后tomcat在启动时便使用设定的JDK。</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">export</span> <span class="hljs-string">JAVA_HOME=/home/jdk/Java\jdk7\jdk1.7.0_51</span><br><span class="hljs-attr">export</span> <span class="hljs-string">JRE_HOME=/home/jdk/Java\jdk7\jre7</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">export</span> <span class="hljs-string">JAVA_HOME=/home/jdk/Java/jdk7/jdk1.7.0_51</span><br><span class="hljs-attr">export</span> <span class="hljs-string">JRE_HOME=/home/jdk/Java/jdk7/jre7</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="Tomcat运行方式"><a href="#Tomcat运行方式" class="headerlink" title="Tomcat运行方式"></a>Tomcat运行方式</h3><pre><code class=" mermaid">graph LR
 startup.bat-- 调用 ---&gt;catalina.bat
