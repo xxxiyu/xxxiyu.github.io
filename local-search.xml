@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>HttpDelete携带json参数（body）的方法</title>
+    <link href="/2023/12/12/http-delete-with-body/"/>
+    <url>/2023/12/12/http-delete-with-body/</url>
+    
+    <content type="html"><![CDATA[<p>1.Httpclient 中常用的请求有2个，HttpPost 和 HttpGet，一般 HttpPost 对传参 Json 的处理是:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">HttpPost</span> <span class="hljs-variable">post</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HttpPost</span>(url);<br>post.setEntity(<span class="hljs-keyword">new</span> <span class="hljs-title class_">StringEntity</span>(jsonString));<br></code></pre></td></tr></table></figure><p>2.但HttpDelete携带json参数时，不支持setEntity方法，原因是：</p><p>在HttpMethods中，包含HttpGet, HttpPost, HttpPut, HttpDelete等类来实现http的常用操作。其中，HttpPost继承自HttpEntityEnclosingRequestBase，HttpEntityEnclosingRequestBase类又实现了HttpEntityEnclosingRequest接口，实现了setEntity的方法。 而HttpDelete继承自HttpRequestBase，没有实现setEntity的方法，因此无法设置HttpEntity对象。 </p><p>解决方案：重写一个自己的HttpDeleteWithBody类，继承自HttpEntityEnclosingRequestBase，覆盖其中的getMethod方法，从而返回DELETE。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.test.util;<br> <br><span class="hljs-keyword">import</span> org.apache.http.client.methods.HttpEntityEnclosingRequestBase;<br><span class="hljs-keyword">import</span> java.net.URI;<br> <br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HttpDeleteWithBody</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">HttpEntityEnclosingRequestBase</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">METHOD_NAME</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;DELETE&quot;</span>;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getMethod</span><span class="hljs-params">()</span> &#123; <span class="hljs-keyword">return</span> METHOD_NAME; &#125;<br> <br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">HttpDeleteWithBody</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String uri)</span> &#123;<br>        <span class="hljs-built_in">super</span>();<br>        setURI(URI.create(uri));<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">HttpDeleteWithBody</span><span class="hljs-params">(<span class="hljs-keyword">final</span> URI uri)</span> &#123;<br>        <span class="hljs-built_in">super</span>();<br>        setURI(uri);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">HttpDeleteWithBody</span><span class="hljs-params">()</span> &#123; <span class="hljs-built_in">super</span>(); &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>使用案例</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> HttpResponse <span class="hljs-title function_">Delete</span><span class="hljs-params">(String url, String cookie, Header[] headers, String jsonString)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    HttpResponse response;<br>    <span class="hljs-type">CloseableHttpClient</span> <span class="hljs-variable">client</span> <span class="hljs-operator">=</span> HttpClientBuilder.create().build();<br> <br>    <span class="hljs-type">HttpDeleteWithBody</span> <span class="hljs-variable">delete</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HttpDeleteWithBody</span>(url);<br>    delete.setEntity(<span class="hljs-keyword">new</span> <span class="hljs-title class_">StringEntity</span>(jsonString));<br> <br>    delete.setHeaders(headers);<br>    delete.addHeader(<span class="hljs-string">&quot;content-type&quot;</span>, <span class="hljs-string">&quot;application/json&quot;</span>);<br>    delete.addHeader(<span class="hljs-string">&quot;Cookie&quot;</span>, cookie);<br> <br>    response = client.execute(delete);<br>    <span class="hljs-keyword">return</span> response;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTTP</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTTP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ORACLE 逗号分隔列变多行</title>
     <link href="/2023/12/12/oracle-column-to-row/"/>
     <url>/2023/12/12/oracle-column-to-row/</url>
