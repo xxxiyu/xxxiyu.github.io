@@ -227,6 +227,31 @@
   
   
   <entry>
+    <title>Tomcat修改窗口名称</title>
+    <link href="/2021/12/22/tomcat-modify-window-name/"/>
+    <url>/2021/12/22/tomcat-modify-window-name/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Tomcat-修改窗口名称"><a href="#Tomcat-修改窗口名称" class="headerlink" title="Tomcat 修改窗口名称"></a>Tomcat 修改窗口名称</h1><p>在windows环境下，当同时启动多个Tomcat时，由于名称一样不能直观的分辨出各个项目，此问题可以通过修改Tomcat窗口的名称来解决。</p><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><pre><code class=" mermaid">graph LRA((开始)) --打开--&gt; B(/bin/catalina.out)B -- 找到 --&gt; C(TITLE=Tomcat)C -- 修改为 --&gt; D(TLTLE=Tomcat_new_name)D --&gt; E((结束))</code></pre><ol><li><p>使用记事本打开Tomcat的bin目录下的catalina.bat。</p></li><li><p>找到if “%TITLE%” &#x3D;&#x3D; “” set TITLE&#x3D;xxx 这一行, 修改xxx名称, 再次启动Tomcat窗口的名称就是修改后的名称了。</p></li></ol><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs properties">:<span class="hljs-attr">doStart</span><br><span class="hljs-attr">shift</span><br><span class="hljs-attr">if</span> <span class="hljs-string">&quot;%TITLE%&quot; == &quot;&quot; set TITLE=Tomcat_new_name</span><br><span class="hljs-attr">set</span> <span class="hljs-string">_EXECJAVA=start &quot;%TITLE%&quot; %_RUNJAVA%</span><br><span class="hljs-attr">if</span> <span class="hljs-string">not &quot;&quot;%1&quot;&quot; == &quot;&quot;-security&quot;&quot; goto execCmd</span><br><span class="hljs-attr">shift</span><br><span class="hljs-attr">echo</span> <span class="hljs-string">Using Security Manager</span><br><span class="hljs-attr">set</span> <span class="hljs-string">&quot;SECURITY_POLICY_FILE=%CATALINA_BASE%\conf\catalina.policy&quot;</span><br><span class="hljs-attr">goto</span> <span class="hljs-string">execCmd</span><br>:<span class="hljs-attr">doStop</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tomcat</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Tomcat</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ORACLE MERGE INTO</title>
     <link href="/2021/08/08/ORACLE_merge-into/"/>
     <url>/2021/08/08/ORACLE_merge-into/</url>

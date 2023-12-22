@@ -18,22 +18,22 @@
   <meta name="author" content="xiyuxx">
   <meta name="keywords" content="">
   
-    <meta name="description" content="ORACLE MERGE INTO的用法">
+    <meta name="description" content="Tomcat修改窗口名称">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ORACLE MERGE INTO">
-<meta property="og:url" content="http://xxxiyu.github.io/2021/08/08/ORACLE_merge-into/index.html">
+<meta property="og:title" content="Tomcat修改窗口名称">
+<meta property="og:url" content="http://xxxiyu.github.io/2021/12/22/tomcat-modify-window-name/index.html">
 <meta property="og:site_name" content="(^_^)">
-<meta property="og:description" content="ORACLE MERGE INTO的用法">
+<meta property="og:description" content="Tomcat修改窗口名称">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-08-08T13:47:36.000Z">
-<meta property="article:modified_time" content="2023-12-07T02:58:51.003Z">
+<meta property="article:published_time" content="2021-12-22T11:03:06.000Z">
+<meta property="article:modified_time" content="2023-12-22T00:34:13.014Z">
 <meta property="article:author" content="xiyuxx">
-<meta property="article:tag" content="ORACLE">
+<meta property="article:tag" content="Tomcat">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>ORACLE MERGE INTO - (^_^)</title>
+  <title>Tomcat修改窗口名称 - (^_^)</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -179,7 +179,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ORACLE MERGE INTO"></span>
+            <span id="subtitle" data-typed-text="Tomcat修改窗口名称"></span>
           
         </div>
 
@@ -195,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          207 words
+          645 words
         
       </span>
     
@@ -206,7 +206,7 @@
         
         
         
-          2 mins
+          6 mins
         
       </span>
     
@@ -244,12 +244,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">ORACLE MERGE INTO</h1>
+            <h1 style="display: none">Tomcat修改窗口名称</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on December 7, 2023 am
+                    Last updated on December 22, 2023 am
                   
                 
               </p>
@@ -257,7 +257,22 @@
             
               <div class="markdown-body">
                 
-                <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">MERGE</span> <span class="hljs-keyword">INTO</span> schema. <span class="hljs-keyword">table</span> alias<br><span class="hljs-keyword">USING</span> &#123; schema. <span class="hljs-keyword">table</span> <span class="hljs-operator">|</span> views <span class="hljs-operator">|</span> query&#125; alias<br><span class="hljs-keyword">ON</span> &#123;(条件) &#125;<br><span class="hljs-keyword">WHEN</span> MATCHED <span class="hljs-keyword">THEN</span><br>  <span class="hljs-keyword">UPDATE</span> <span class="hljs-keyword">SET</span> &#123;clause&#125;<br><span class="hljs-keyword">WHEN</span> <span class="hljs-keyword">NOT</span> MATCHED <span class="hljs-keyword">THEN</span><br>  <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">VALUES</span> &#123;clause&#125;;<br>————————————————<br></code></pre></td></tr></table></figure>
+                <h1 id="Tomcat-修改窗口名称"><a href="#Tomcat-修改窗口名称" class="headerlink" title="Tomcat 修改窗口名称"></a>Tomcat 修改窗口名称</h1><p>在windows环境下，当同时启动多个Tomcat时，由于名称一样不能直观的分辨出各个项目，此问题可以通过修改Tomcat窗口的名称来解决。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><pre><code class=" mermaid">graph LR
+A((开始)) --打开--&gt; B(/bin/catalina.out)
+B -- 找到 --&gt; C(TITLE=Tomcat)
+C -- 修改为 --&gt; D(TLTLE=Tomcat_new_name)
+D --&gt; E((结束))
+</code></pre>
+
+<ol>
+<li><p>使用记事本打开Tomcat的bin目录下的catalina.bat。</p>
+</li>
+<li><p>找到if “%TITLE%” &#x3D;&#x3D; “” set TITLE&#x3D;xxx 这一行, 修改xxx名称, 再次启动Tomcat窗口的名称就是修改后的名称了。</p>
+</li>
+</ol>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs properties">:<span class="hljs-attr">doStart</span><br><span class="hljs-attr">shift</span><br><span class="hljs-attr">if</span> <span class="hljs-string">&quot;%TITLE%&quot; == &quot;&quot; set TITLE=Tomcat_new_name</span><br><span class="hljs-attr">set</span> <span class="hljs-string">_EXECJAVA=start &quot;%TITLE%&quot; %_RUNJAVA%</span><br><span class="hljs-attr">if</span> <span class="hljs-string">not &quot;&quot;%1&quot;&quot; == &quot;&quot;-security&quot;&quot; goto execCmd</span><br><span class="hljs-attr">shift</span><br><span class="hljs-attr">echo</span> <span class="hljs-string">Using Security Manager</span><br><span class="hljs-attr">set</span> <span class="hljs-string">&quot;SECURITY_POLICY_FILE=%CATALINA_BASE%\conf\catalina.policy&quot;</span><br><span class="hljs-attr">goto</span> <span class="hljs-string">execCmd</span><br>:<span class="hljs-attr">doStop</span><br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -276,7 +291,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/ORACLE/" class="category-chain-item">ORACLE</a>
+  <a href="/categories/Tomcat/" class="category-chain-item">Tomcat</a>
   
   
 
@@ -291,7 +306,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/ORACLE/">#ORACLE</a>
+        <a href="/tags/Tomcat/">#Tomcat</a>
       
     </div>
   
@@ -305,9 +320,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/22/tomcat-modify-window-name/" title="Tomcat修改窗口名称">
+                      <a href="/2023/09/15/ORACLE%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E7%94%A8%E6%88%B7/" title="ORACLE创建查看权限用户">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Tomcat修改窗口名称</span>
+                        <span class="hidden-mobile">ORACLE创建查看权限用户</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -315,8 +330,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/16/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/" title="java处理日期总结">
-                        <span class="hidden-mobile">java处理日期总结</span>
+                      <a href="/2021/08/08/ORACLE_merge-into/" title="ORACLE MERGE INTO">
+                        <span class="hidden-mobile">ORACLE MERGE INTO</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
